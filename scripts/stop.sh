@@ -6,5 +6,5 @@ echo "##########################################################"
 
 docker kill $(docker ps -aq)
 docker rm -f $(docker ps -aq)
-docker network prune -y
-docker volume prune -y
+docker network prune 
+docker volume prune
