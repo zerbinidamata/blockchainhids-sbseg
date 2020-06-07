@@ -85,6 +85,11 @@ You can change the values in createCar.sh and query.sh for different result.
 
 ---
 
+## See on CouchDB
+
+- For ORG1: http://localhost:5984/_utils/#database/mychannel_fabcar/_all_docs
+- FOR ORG2: http://localhost:7984/_utils/#database/mychannel_fabcar/_all_docs
+
 ## Network Setup Steps (Generating new certificates)
 
 1. cd into scripts directory and execute belwo scripts:
