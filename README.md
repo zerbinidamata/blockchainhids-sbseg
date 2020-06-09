@@ -38,21 +38,21 @@ Check [this](https://hyperledger-fabric.readthedocs.io/en/release-1.4/getting_st
 3. Install and instantiate chaincode by executing below script:
 
    ```shell
-   ./installChaincode.sh
+   ./installRulesChaincode.sh
    ```
 
    - This script will install chaincode on peer0 of ORG1 and instantiate it on the mychannel
 
 4. Invoke the chaincode by executing below script:
    ```shell
-   ./createCar.sh
+   ./createRule.sh
    ```
 5. Query chaincode by executing below script:
    ```shell
-   ./query.sh
+   ./queryRules.sh
    ```
 
-You can change the values in createCar.sh and query.sh for different result.
+You can change the values in createRule.sh and queryRule.sh for different result.
 
 **For ORG2**
 
@@ -64,19 +64,19 @@ You can change the values in createCar.sh and query.sh for different result.
 
 8. Now install chaincode on ORG2 by running below script
    ```shell
-   ./installChaincode.sh
+   ./installRulesChaincode.sh
    ```
 9. Now invoke chaincode functions by executing below script:
 
    ```shell
-   ./createCar.sh
+   ./createRule.sh
    ```
 
    - Only first time this script will take time, because whenever chaincode gets invoked first time, docker container will get created for chaincode.
 
 10. Check the result by executing below command:
     ```shell
-    ./query.sh
+    ./queryRules.sh
     ```
 11. To stop the running containers and to remove the volumes associated with them from your system, execute below script form both the Org's directory
     ```
@@ -87,8 +87,8 @@ You can change the values in createCar.sh and query.sh for different result.
 
 ## See on CouchDB
 
-- For ORG1: http://localhost:5984/_utils/#database/mychannel_fabcar/_all_docs
-- FOR ORG2: http://localhost:7984/_utils/#database/mychannel_fabcar/_all_docs
+- For ORG1: http://localhost:5984/_utils/#database/mychannel_rules/_all_docs
+- FOR ORG2: http://localhost:7984/_utils/#database/mychannel_rules/_all_docs
 
 ## Network Setup Steps (Generating new certificates)
 
@@ -131,21 +131,21 @@ You can change the values in createCar.sh and query.sh for different result.
 5. Install and instantiate chaincode by executing below script:
 
    ```shell
-   ./installChaincode.sh
+   ./installRulesChaincode.sh
    ```
 
    - This script will install chaincode on peer0 of ORG1 and instantiate it on the mychannel.
 
 6. Invoke the chaincode by executing below script:
    ```shell
-   ./createCar.sh
+   ./createRule.sh
    ```
 7. Query chaincode by executing below script:
    ```shell
-   ./query.sh
+   ./queryRule.sh
    ```
 
-You can change the values in createCar.sh and query.sh for different result.
+You can change the values in createRule.sh and queryRule.sh for different result.
 
 **For ORG2**
 
@@ -157,17 +157,17 @@ You can change the values in createCar.sh and query.sh for different result.
 
 10. Now install chaincode on ORG2 by running below script
     ```shell
-    ./installChaincode.sh
+    ./installRulesChaincode.sh
     ```
 11. Now invoke chaincode functions by executing below script:
 
     ```shell
-    ./createCar.sh
+    ./createRule.sh
     ```
 
     - Only first time this script will take time, because whenever chaincode gets invoked first time, docker container will get created for chaincode.
 
 12. Check the result by executing below command:
     ```shell
-    ./query.sh
+    ./queryRule.sh
     ```

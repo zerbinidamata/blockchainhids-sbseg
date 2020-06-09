@@ -2,10 +2,10 @@
 #INSTALL CHAINCODE ON ORG2 PEER(S)
 
 CHANNEL_NAME="mychannel"
-CHAINCODE_NAME="fabcar"
+CHAINCODE_NAME="rules"
 CHAINCODE_LANGUAGE="node"
 CHAINCODE_VERSION="1.0.0"
-CHAINCODE_PATH="/opt/gopath/src/github.com/chaincode/fabcar/node/"
+CHAINCODE_PATH="/opt/gopath/src/github.com/chaincode/rules/node/"
 
 # install on peer0.org2
 echo "*******Installing chaincode on peer0.org2 ********************"

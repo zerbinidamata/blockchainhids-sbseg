@@ -1,7 +1,7 @@
 #/bin/bash
 
-CHAINCODE_NAME="fabcar"
-CHAINCODE_SRC="/opt/gopath/src/github.com/chaincode/fabcar/node"
+CHAINCODE_NAME="rules"
+CHAINCODE_SRC="/opt/gopath/src/github.com/chaincode/rules/node"
 CHAINCODE_VERSION="1.0.0"
 CHANNEL_NAME="mychannel"
 

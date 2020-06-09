@@ -1,9 +1,9 @@
 #/bin/bash
 
 CHANNEL_NAME="mychannel"
-CHAINCODE_NAME="fabcar"
+CHAINCODE_NAME="rules"
 CHAINCODE_VERSION="1.0.0"
-CHAINCODE_PATH="/opt/gopath/src/github.com/chaincode/fabcar/node/"
+CHAINCODE_PATH="/opt/gopath/src/github.com/chaincode/rules/node/"
 CHAINCDE_LANGUAGE="node"
 
 echo "****************** Installing Chaincode *****************************"
