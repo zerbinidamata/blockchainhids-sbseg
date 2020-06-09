@@ -45,7 +45,7 @@ Check [this](https://hyperledger-fabric.readthedocs.io/en/release-1.4/getting_st
 
 4. Invoke the chaincode by executing below script:
    ```shell
-   ./createRule.sh
+   ./createRule.sh RULE10 Name Premise Action Test_Case
    ```
 5. Query chaincode by executing below script:
    ```shell
