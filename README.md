@@ -20,6 +20,12 @@ Check [this](https://hyperledger-fabric.readthedocs.io/en/release-1.4/getting_st
 
 ---
 
+## Easy start
+
+```
+ ./startAll.sh
+```
+
 ## Network Setup Steps (without generating new certificates):
 
 1. go to the ORG1 directory and execute below command

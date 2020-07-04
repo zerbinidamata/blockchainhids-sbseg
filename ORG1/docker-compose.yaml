@@ -1,6 +1,6 @@
 # docker-compose for ORG-1
 
-version: '2'
+version: "2"
 
 networks:
   byfn:
@@ -35,8 +35,8 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-    - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-    - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
+      - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+      - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
     ports:
       - 7050:7050
     networks:
@@ -61,7 +61,7 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     depends_on:
-      - couchdb0  
+      - couchdb0
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     volumes:
@@ -70,10 +70,10 @@ services:
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     ports:
       - 7051:7051
-      - 7053:7053      
+      - 7053:7053
     networks:
       - byfn
-  
+
   peer1.org1.example.com:
     image: hyperledger/fabric-peer
     container_name: peer1.org1.example.com
@@ -93,7 +93,7 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     depends_on:
-      - couchdb1  
+      - couchdb1
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     volumes:
@@ -102,10 +102,10 @@ services:
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     ports:
       - 8051:7051
-      - 8053:7053      
+      - 8053:7053
     networks:
       - byfn
-      
+
   couchdb0:
     container_name: couchdb0
     image: hyperledger/fabric-couchdb
@@ -116,7 +116,7 @@ services:
       - "5984:5984"
     networks:
       - byfn
-      
+
   couchdb1:
     container_name: couchdb1
     image: hyperledger/fabric-couchdb
@@ -126,7 +126,7 @@ services:
     ports:
       - "6984:5984"
     networks:
-      - byfn    
+      - byfn
 
   Org1-cli:
     container_name: Org1-cli
@@ -143,14 +143,13 @@ services:
       - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     volumes:
-        - /var/run/:/host/var/run/
-        - ./chaincode/:/opt/gopath/src/github.com/chaincode
-        - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
-        - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
+      - /var/run/:/host/var/run/
+      - ./chaincode/:/opt/gopath/src/github.com/chaincode
+      - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+      - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     depends_on:
       - orderer.example.com
       - peer0.org1.example.com
       - peer1.org1.example.com
     networks:
       - byfn
-
