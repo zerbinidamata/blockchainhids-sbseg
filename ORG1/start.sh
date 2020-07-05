@@ -3,6 +3,7 @@
 CHANNEL_NAME="mychannel"
 
 echo "starting the network....."
+docker-compose -f api.yaml up -d --build 
 docker-compose -f docker-compose.yaml up -d
 
 

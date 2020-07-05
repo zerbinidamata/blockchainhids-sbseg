@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  api.org1:
+    container_name: api.org1
+    build: ./controller-api
+    ports:
+      - "3001:3000"
+    links:
+      - mongo.org1
+  mongo.org1:
+    container_name: mongo.org1
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "37017:27017"
