@@ -13,8 +13,8 @@ services:
   mongo.org1:
     container_name: mongo.org1
     image: mongo
-    volumes:
-      - data:/data/db
+    # volumes:
+    #   - data:/data/db
     networks:
       - local
     ports:
