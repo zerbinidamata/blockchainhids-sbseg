@@ -1,6 +1,7 @@
 FROM node:latest
+
 WORKDIR /usr/src/app
-COPY package*.json ./
+COPY package.json ./
 RUN yarn
 COPY . .
 

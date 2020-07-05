@@ -10,8 +10,6 @@ services:
       - mongo
     networks:
       - local
-    volumes:
-      - ./app:/usr/src/app
 
   mongo:
     container_name: mongo

@@ -1,5 +1,6 @@
 import Rules from "../models/Rules";
 import { exec } from "child_process";
+import { stdout } from "process";
 
 class RulesController {
     // GET
@@ -48,21 +49,23 @@ class RulesController {
             console.log(req.body);
 
             if (blockchain_shared) {
-                exec(
-                    //TODO: exportar path como env var
-                    `/Users/rafael/Documents/GitHub/uiot/blockchainhids-sbseg/ORG2/createRule.sh '"${name}"' '"${name}"' '"${promise}"' '"${action}"' '"${test_case}"'`,
-                    (error, stdout, stderr) => {
-                        if (error) {
-                            console.log(`error: ${error.message}"`);
-                            return;
+                exec("pwd", (err, pwd) => {
+                    exec(
+                        //TODO: exportar path como env var
+                        `${pwd}/createRule.sh '"${name}"' '"${name}"' '"${promise}"' '"${action}"' '"${test_case}"'`,
+                        (error, stdout, stderr) => {
+                            if (error) {
+                                console.log(`error: ${error.message}"`);
+                                return;
+                            }
+                            if (stderr) {
+                                console.log(`stderr: ${stderr}`);
+                                return;
+                            }
+                            console.log(`stdout: ${stdout}`);
                         }
-                        if (stderr) {
-                            console.log(`stderr: ${stderr}`);
-                            return;
-                        }
-                        console.log(`stdout: ${stdout}`);
-                    }
-                );
+                    );
+                });
             }
 
             return res.status(201).json(req.body);

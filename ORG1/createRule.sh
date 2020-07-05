@@ -11,7 +11,5 @@ premise=$3
 action=$4
 test=$5
 
-echo $2
-
  #docker exec Org1-cli peer chaincode invoke -o orderer.example.com:7050 -C $CHANNEL_NAME -n $CHAINCODE_NAME -c '{"Args":["createRule", "RULE 2", "Name", "Premise", "Action", "Test Case"]}'
 docker exec Org1-cli peer chaincode invoke -o orderer.example.com:7050 -C $CHANNEL_NAME -n $CHAINCODE_NAME -c '{"Args":["createRule", '"$1"', '"$2"', '"$3"', '"$4"', '"$5"']}'
