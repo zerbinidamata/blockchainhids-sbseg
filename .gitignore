@@ -1,3 +1,5 @@
 .DS_Store
 ORG2/data/
 ORG1/data/
+ORG2/data/**
+ORG2/data/WiredTiger.wt
