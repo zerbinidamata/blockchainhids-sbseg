@@ -6,8 +6,13 @@ services:
     build: ./controller-api
     ports:
       - "3000:3000"
-    links:
+    depends_on:
       - mongo
+    networks:
+      - local
+    volumes:
+      - ./app:/usr/src/app
+
   mongo:
     container_name: mongo
     image: mongo
@@ -15,3 +20,9 @@ services:
       - ./data:/data/db
     ports:
       - "27017:27017"
+    networks:
+      - local
+
+networks:
+  local:
+    driver: bridge

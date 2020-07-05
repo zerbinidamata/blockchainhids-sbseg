@@ -1,3 +1,3 @@
 export default {
-    url: "mongodb://localhost:27017/hids-sbseg",
+    url: "mongodb://mongo:27017/hids-sbseg",
 };
