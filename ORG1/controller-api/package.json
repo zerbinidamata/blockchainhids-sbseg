@@ -6,12 +6,14 @@
     "author": "Paulo Henrique <paulohfcmendes@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "nodemon src/server.js ",
+        "dev": "docker run -d -p 37017:27017  -d mongo:latest && nodemon src/server.js ",
+        "dev-no-db": "nodemon src/server.js ",
         "queue": "nodemon src/queue.js",
         "build": "sucrase ./src -d ./dist --transforms imports",
         "start": "node dist/server.js"
     },
     "dependencies": {
+        "axios": "^0.19.2",
         "bcrypt": "^5.0.0",
         "cors": "^2.8.5",
         "express": "^4.17.1",

@@ -52,7 +52,7 @@ class RulesController {
                 exec("pwd", (err, pwd) => {
                     exec(
                         //TODO: exportar path como env var
-                        `${pwd}/createRule.sh '"${name}"' '"${name}"' '"${promise}"' '"${action}"' '"${test_case}"'`,
+                        `/Users/rafael/Documents/GitHub/uiot/blockchainhids-sbseg/ORG2/createRule.sh '"${name}"' '"${name}"' '"${promise}"' '"${action}"' '"${test_case}"'`,
                         (error, stdout, stderr) => {
                             if (error) {
                                 console.log(`error: ${error.message}"`);

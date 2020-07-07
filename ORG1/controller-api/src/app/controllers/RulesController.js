@@ -1,6 +1,6 @@
 import Rules from "../models/Rules";
 import { exec } from "child_process";
-
+import axios from "axios";
 class RulesController {
     // GET
     async index(req, res) {
@@ -56,11 +56,28 @@ class RulesController {
                             console.log(`error: ${error.message}"`);
                             return;
                         }
-                        if (stderr) {
-                            console.log(`stderr: ${stderr}`);
-                            return;
-                        }
+                        // if (stderr) {
+                        //     console.log(`stderr: ${stderr}`);
+                        //     return;
+                        // }
                         console.log(`stdout: ${stdout}`);
+
+                        exec(
+                            `/Users/rafael/Documents/GitHub/uiot/blockchainhids-sbseg/ORG1/queryRules.sh`,
+                            (error, stdout, stderr) => {
+                                if (error) {
+                                    console.log(`error: ${error.message}"`);
+                                    return;
+                                }
+                                if (stderr) {
+                                    console.log(`stderr: ${stderr}`);
+                                    return;
+                                }
+                                console.log(`stdout: ${stdout}`);
+
+                                axios.post("localhost:3000/rules", req.body);
+                            }
+                        );
                     }
                 );
             }
